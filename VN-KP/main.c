@@ -1,26 +1,48 @@
 
 #include <stdio.h>
+#include <stdbool.h>
+
+typedef struct {
+    
+    float i1;
+    float i2;
+    float i3;
+    float i4;
+    
+} input;
+
+typedef struct {
+    
+    float o1;
+    float o2;
+    float o3;
+    float o4;
+    
+} output;
+
 
 int main(int argc, const char * argv[]) {
 
-    printf("00001a\n");
+    printf("00002a\n");
     
-    float primary = 0.0;
-    float secondary = 0.0;
-    float out = 0.0;
+    bool result = false;
     
-    int i;
-    for (i = 0; i < 10; i++) {
+    input input1 = {};
+   // output output1 = {};
+    
+    if (input1.i1 > 1 && input1.i2 > 1) {
         
-        if (out == 0){
-            out = ++primary * ++secondary;
-        } else {
-            out *= 3.14;
-        }
-       
+        result = true;
+        
+        output output1 = {1, 1, 0.5, 0.5};
+        
+    } else if (input1.i2 > 1 && input1.i4 > 1) {
+        
+        output output1 = {0.5, 0.5, 1, 1};
         
     }
-    printf("%f\n", out);
+    
+    printf("%d\n", result);
     
     return 0;
 }

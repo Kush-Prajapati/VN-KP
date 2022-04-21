@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <stdbool.h>
 
+bool neuone(bool signal);
+
 typedef struct {
     
     bool alpha;
@@ -13,7 +15,7 @@ typedef struct {
 
 int main(int argc, const char * argv[]) {
 
-    printf("00004a\n");
+    printf("00005a\n");
     
     bool result = false;
     
@@ -24,19 +26,19 @@ int main(int argc, const char * argv[]) {
     return 0;
 }
 
-io neuone(io input) {
+void wire(bool signal, int destinations) {
     
-    io out = {};
-    
-    if (input.alpha && input.beta && input.gamma) {
+    switch (destinations) {
         
-        out = (io) {false, true, false};
-        
-    } else {
-        
-        out = (io) {true, false, true};
-        
+        case '1':
+        neuone(signal);
+        break;
     }
     
-    return out;
+
+}
+
+bool neuone(bool signal) {
+    
+    return signal;
 }
